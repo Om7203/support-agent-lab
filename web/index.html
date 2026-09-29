@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Try a small, inspectable support triage workflow by Om Vaghasiya.">
+  <title>Support Agent Lab · Om Vaghasiya</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js?v=2"></script>
+</head>
+<body>
+  <a class="skip" href="#demo">Skip to demo</a>
+  <div class="shell">
+    <header class="topbar"><a class="brand" href="https://om7203.github.io/om-vaghasiya-portfolio/">OV<span> / LAB</span></a><span class="topbar-note">PROJECT 01 · WORKING PROTOTYPE</span><a class="back" href="https://om7203.github.io/om-vaghasiya-portfolio/projects/support-agent.html">Case study</a></header>
+    <main>
+      <div class="intro"><div class="intro-label"><span class="pulse"></span> LIVE, LOCAL DEMO</div><h1>Ask it. Follow<br><em>the decision.</em></h1><p>A small support workflow that retrieves a policy, cites it, or hands the question to a person. The sample shop is fictional, and no customer data is involved.</p></div>
+      <div class="workspace" id="demo">
+        <section class="console" aria-labelledby="console-title"><div class="panel-head"><span>01 / CONVERSATION</span><span id="runtime-label">SAMPLE KNOWLEDGE BASE</span></div><h2 id="console-title">Try a question</h2><div class="suggestions"><button type="button" data-question="How long does delivery take?">Delivery time</button><button type="button" data-question="My card was charged twice.">Payment issue</button><button type="button" data-question="Do you sell bicycles?">Unknown question</button></div><form id="question-form"><label for="question">Your question</label><div class="input-row"><input id="question" name="question" maxlength="500" autocomplete="off" placeholder="What is the warranty?" required><button type="submit">Run workflow <span aria-hidden="true">↗</span></button></div></form><div class="result" id="result" aria-live="polite"><p class="empty">Choose an example or ask your own question. The response will show its source and the route it took.</p></div></section>
+        <aside class="trace" aria-labelledby="trace-title"><div class="panel-head"><span>02 / EXECUTION TRACE</span><span id="trace-runtime">BROWSER RULES</span></div><h2 id="trace-title">What happened</h2><ol id="trace-list"><li><b>01</b><span>Validate input</span></li><li><b>02</b><span>Retrieve article</span></li><li><b>03</b><span>Choose route</span></li><li><b>04</b><span>Answer / handoff / abstain</span></li></ol><p class="trace-note">On this public page, the workflow runs in your browser with fixed rules. The repository also includes the same flow as a LangGraph server and an evaluation set.</p><a class="source" href="https://github.com/Om7203/support-agent-lab" target="_blank" rel="noopener noreferrer">Explore the code <span>↗</span></a></aside>
+      </div>
+      <section class="under"><div><span class="section-no">THE DESIGN</span><h2>Evidence before an answer.</h2></div><p>Every response follows one of three paths. If a policy matches, it cites the article. Account or payment issues go to a person. If the knowledge base has no answer, it says so. There is no live language model, customer database, or ticket creation in this demo.</p></section>
+    </main>
+    <footer><span>Om Vaghasiya · Support Agent Lab</span><a href="https://om7203.github.io/om-vaghasiya-portfolio/">Back to portfolio</a></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+[
+  { "question": "How long does delivery take?", "expectedRoute": "answer", "expectedCitation": "shipping" },
+  { "question": "Can I return an unused item?", "expectedRoute": "answer", "expectedCitation": "returns" },
+  { "question": "What is the warranty for a broken product?", "expectedRoute": "answer", "expectedCitation": "warranty" },
+  { "question": "Can I change my delivery address?", "expectedRoute": "answer", "expectedCitation": "address" },
+  { "question": "My card was charged twice.", "expectedRoute": "handoff" },
+  { "question": "I need a human agent for my complaint.", "expectedRoute": "handoff" },
+  { "question": "Do you sell bicycles?", "expectedRoute": "abstain" },
+  { "question": "What is the weather in Berlin?", "expectedRoute": "abstain" }
+]

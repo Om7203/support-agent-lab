@@ -1,0 +1,16 @@
+{
+  "name": "support-agent-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A small, inspectable support triage workflow built with LangGraph",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node tests/engine.test.mjs",
+    "eval": "node evals/run.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@langchain/langgraph": "^1.0.0"
+  }
+}
