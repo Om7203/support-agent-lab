@@ -7,10 +7,14 @@
   "scripts": {
     "start": "node server.mjs",
     "test": "node tests/engine.test.mjs",
-    "eval": "node evals/run.mjs"
+    "eval": "node evals/run.mjs",
+    "langchain": "node examples/langchain-retrieval.mjs"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
+    "@langchain/core": "^1.2.13",
     "@langchain/langgraph": "^1.0.0"
   }
 }

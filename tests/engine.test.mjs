@@ -4,6 +4,7 @@ import { validateQuestion } from '../src/engine.mjs';
 import { runAgent } from '../src/graph.mjs';
 import { createApp } from '../server.mjs';
 import { runBrowserDemo } from '../web/demo-core.mjs';
+import { retrievalChain } from '../examples/langchain-retrieval.mjs';
 
 test('answers a policy question with a citation', async () => {
   const result = await runAgent('When will my parcel arrive after shipping?');
@@ -51,4 +52,9 @@ test('browser fallback and graph agree on representative answers and routes', as
     assert.equal(graphResult.route, browserResult.route);
     assert.equal(graphResult.answer, browserResult.answer);
   }
+});
+
+test('LangChain retrieval exercise returns the matching document', async () => {
+  const hits = await retrievalChain.invoke('How long does delivery take?');
+  assert.equal(hits[0].id, 'shipping');
 });

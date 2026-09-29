@@ -7,6 +7,7 @@ const traceList = document.querySelector('#trace-list');
 const isStatic = location.port !== '3000';
 document.querySelector('#runtime-label').textContent = isStatic ? 'BROWSER DEMO · NO MODEL CALL' : 'LOCAL LANGGRAPH SERVER';
 document.querySelector('#trace-runtime').textContent = isStatic ? 'BROWSER RULES' : 'LANGGRAPH';
+if (!isStatic) document.querySelector('.trace-note').textContent = 'This local page calls the LangGraph server. The public portfolio demo runs the same deterministic decision rules in your browser; neither version calls a live language model.';
 
 function render(result) {
   output.replaceChildren();

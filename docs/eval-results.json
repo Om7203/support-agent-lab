@@ -1,0 +1,54 @@
+{
+  "passed": 8,
+  "total": 8,
+  "results": [
+    {
+      "question": "How long does delivery take?",
+      "expected": "answer",
+      "actual": "answer",
+      "passed": true
+    },
+    {
+      "question": "Can I return an unused item?",
+      "expected": "answer",
+      "actual": "answer",
+      "passed": true
+    },
+    {
+      "question": "What is the warranty for a broken product?",
+      "expected": "answer",
+      "actual": "answer",
+      "passed": true
+    },
+    {
+      "question": "Can I change my delivery address?",
+      "expected": "answer",
+      "actual": "answer",
+      "passed": true
+    },
+    {
+      "question": "My card was charged twice.",
+      "expected": "handoff",
+      "actual": "handoff",
+      "passed": true
+    },
+    {
+      "question": "I need a human agent for my complaint.",
+      "expected": "handoff",
+      "actual": "handoff",
+      "passed": true
+    },
+    {
+      "question": "Do you sell bicycles?",
+      "expected": "abstain",
+      "actual": "abstain",
+      "passed": true
+    },
+    {
+      "question": "What is the weather in Berlin?",
+      "expected": "abstain",
+      "actual": "abstain",
+      "passed": true
+    }
+  ]
+}
