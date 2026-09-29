@@ -22,4 +22,6 @@ The HTTP node points to `127.0.0.1:3000`, so a remote n8n instance or a Docker c
 
 ## Verified local run
 
-I imported and executed the workflow with n8n 2.41.3 on September 29, 2026. All three nodes succeeded, and the HTTP node returned the [recorded result](n8n-result.json). This checks n8n-to-API wiring. The wider answer, handoff, and abstain behavior is covered by the project's tests and evaluation cases.
+I imported and executed the workflow with the n8n 2.41.3 CLI on September 29, 2026. All three nodes succeeded, and the HTTP node returned the [recorded result](n8n-result.json). The editor displayed the imported nodes, but its **Execute workflow** button did not start a run in this local installation. This checks n8n-to-API wiring through the CLI; it does not establish that the editor's run control works. The wider answer, handoff, and abstain behavior is covered by the project's tests and evaluation cases.
+
+The CLI commands for a local n8n install are `n8n import:workflow --input=examples/n8n-support-api.workflow.json` and `n8n execute --id=support-agent-local-smoke-test --rawOutput`. The `id` in the JSON is intentionally stable for this example. Keep n8n's user data and any login credentials outside the public repository.
