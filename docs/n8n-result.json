@@ -1,0 +1,21 @@
+{
+  "n8nVersion": "2.41.3",
+  "runDate": "2026-09-29",
+  "workflow": "Support Agent Lab - local API smoke test",
+  "status": "success",
+  "nodeStatuses": {
+    "Run sample": "success",
+    "Sample question": "success",
+    "Ask support API": "success"
+  },
+  "question": "How long does delivery take?",
+  "apiResponse": {
+    "route": "answer",
+    "answer": "Standard delivery takes 3–5 business days after dispatch. Tracking appears in the order confirmation email once the parcel ships.",
+    "citations": [
+      { "id": "shipping", "title": "Shipping", "url": "/kb/shipping" }
+    ],
+    "confidence": "high",
+    "trace": ["validate", "retrieve", "decide", "answer"]
+  }
+}

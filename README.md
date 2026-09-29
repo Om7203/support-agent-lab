@@ -33,5 +33,6 @@ curl -X POST http://127.0.0.1:3000/api/chat -H "Content-Type: application/json" 
 - [Results from a local run](docs/eval-results.json) show the outcome for each fixed case.
 - [Tests](tests/engine.test.mjs) check the graph path, validation, and HTTP response.
 - [LangChain retrieval exercise](examples/langchain-retrieval.mjs) composes the same validator and retriever as a small runnable chain; it does not use embeddings or a model.
+- [n8n workflow](docs/N8N.md) calls the local support API from an importable, three-node workflow. I ran it in n8n 2.41.3 and saved the [result](docs/n8n-result.json).
 
-This is a **production-minded prototype**, not a deployed customer-support service. Before real use it would need authentication, a maintained knowledge base, monitoring, rate limits, abuse handling, and an actual ticket integration. The next learning step is a LangChain retrieval experiment with embeddings, followed by a controlled LLM answer node. I would compare both against this deterministic baseline rather than claiming an improvement without evidence.
+This is a **production-minded prototype**, not a deployed customer-support service. Before real use it would need authentication, a maintained knowledge base, monitoring, rate limits, abuse handling, and an actual ticket integration. The next learning step is a retrieval experiment with embeddings, followed by a controlled LLM answer node. I would compare both against this deterministic baseline rather than claiming an improvement without evidence.

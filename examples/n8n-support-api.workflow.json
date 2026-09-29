@@ -1,0 +1,67 @@
+{
+  "id": "support-agent-local-smoke-test",
+  "name": "Support Agent Lab - local API smoke test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a5d8793f-5fe7-4712-8245-76e3f0b68641",
+      "name": "Run sample",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d72d2c82-e769-4080-a72e-7cce25c87133",
+              "name": "question",
+              "value": "How long does delivery take?",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2f5fc4f6-03ad-461a-bd3a-744862fe9149",
+      "name": "Sample question",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:3000/api/chat",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ question: $json.question }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "53ecf678-11e3-4cba-93cc-ec2ad5f35be9",
+      "name": "Ask support API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [680, 300]
+    }
+  ],
+  "connections": {
+    "Run sample": {
+      "main": [[{ "node": "Sample question", "type": "main", "index": 0 }]]
+    },
+    "Sample question": {
+      "main": [[{ "node": "Ask support API", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "active": false,
+  "pinData": {}
+}
